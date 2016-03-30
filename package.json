@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/m0nq/queue#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0",
+    "stylus": "^0.54.2"
   }
 }
