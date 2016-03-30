@@ -1,0 +1,26 @@
+{
+  "name": "queue",
+  "description": "Get paid to learn.",
+  "main": "index.js",
+  "authors": [
+    "Monk Wellington"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/m0nq/queue",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "toastr": "^2.1.2",
+    "angular": "^1.5.3",
+    "angular-resource": "^1.5.3",
+    "angular-route": "^1.5.3"
+  }
+}

@@ -3,8 +3,9 @@
 Get paid to learn.
 
 ###Technologies
-- HTML5
+- Jade
 - CSS3
+- JavaScript
 - MongDB
 - Express
 - Angular
