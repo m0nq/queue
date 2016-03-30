@@ -37,7 +37,6 @@ app.use(express.static(__dirname + '/public'));
 ////////////////////////
 // ROUTE/REGISTRATION //
 ////////////////////////
-
 // default match all routes; i.e. catch all in order to coordinate/not conflict with Angular routing
 app.get('*', function (req, res) {
   res.render('index');
