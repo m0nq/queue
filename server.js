@@ -35,6 +35,9 @@ app.use(stylus.middleware({
 // static routes
 app.use(express.static(__dirname + '/public'));
 
+//////////////////////
+// Mongoose/MongoDB //
+//////////////////////
 // connect to the Mongo database
 mongoose.connect('mongodb://localhost/queue');
 var db = mongoose.connection;
@@ -44,7 +47,16 @@ db.on('error', function (err) {
 });
 
 db.once('open', function callback() {
-  console.log('Throughway to the queue db has been opened...');
+  console.log('Queue db is now open...');
+});
+var messageSchema = mongoose.Schema({
+  message: String
+});
+var Message = mongoose.model('Message', messageSchema);
+// variable to hold the message from the db
+var mongoMessage;
+Message.findOne().exec(function (err, messageDoc) {
+  mongoMessage = messageDoc.message;
 });
 
 ////////////////////////
@@ -56,7 +68,9 @@ app.get('/partials/:partialPath', function (req, res) {
 });
 // default match all routes; i.e. catch all in order to coordinate/not conflict with Angular routing
 app.get('*', function (req, res) {
-  res.render('index');
+  res.render('index', {
+    mongoMessage: mongoMessage
+  });
 });
 
 ///////////////
