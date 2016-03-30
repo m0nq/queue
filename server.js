@@ -40,7 +40,12 @@ app.use(express.static(__dirname + '/public'));
 // Mongoose/MongoDB //
 //////////////////////
 // connect to the Mongo database
-mongoose.connect('mongodb://localhost/queue');
+// if in development mode
+if (env === 'development') {
+  mongoose.connect('mongodb://localhost/queue'); // connect to local db
+} else { // otherwise
+  mongoose.connect('mongodb://qube:l3v147h4n@ds011860.mlab.com:11860/the-queue'); // connect to remote db
+}
 var db = mongoose.connection;
 // listen for errors
 db.on('error', function (err) {
@@ -77,7 +82,7 @@ app.get('*', function (req, res) {
 ///////////////
 // LISTENING //
 ///////////////
-var port = 3030;
+var port = process.env.PORT || 3030;
 app.listen(port, function () {
   console.log("You're listening on the quiet storm... *port:", port);
 });
