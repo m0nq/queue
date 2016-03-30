@@ -9,6 +9,7 @@ var express = require('express'),
     mongoose = require('mongoose');
 // env variable to determine whether in development, production, or test
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 var app = express();
 
 ////////////////////
