@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "5.9.x",
+    "npm": "3.7.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/m0nq/queue.git"
