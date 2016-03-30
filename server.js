@@ -5,7 +5,8 @@ var express = require('express'),
     stylus = require('stylus'),
     bodyParser = require('body-parser'),
     logger = require('morgan'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    mongoose = require('mongoose');
 // env variable to determine whether in development, production, or test
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app = express();
@@ -33,6 +34,18 @@ app.use(stylus.middleware({
 }));
 // static routes
 app.use(express.static(__dirname + '/public'));
+
+// connect to the Mongo database
+mongoose.connect('mongodb://localhost/queue');
+var db = mongoose.connection;
+// listen for errors
+db.on('error', function (err) {
+  console.error('connection error: ', err);
+});
+
+db.once('open', function callback() {
+  console.log('Throughway to the queue db has been opened...');
+});
 
 ////////////////////////
 // ROUTE/REGISTRATION //
