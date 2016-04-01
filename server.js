@@ -58,12 +58,6 @@ db.once('open', function callback() {
 var messageSchema = mongoose.Schema({
   message: String
 });
-var Message = mongoose.model('Message', messageSchema);
-// variable to hold the message from the db
-var mongoMessage;
-Message.findOne().exec(function (err, messageDoc) {
-  mongoMessage = messageDoc.message;
-});
 
 ////////////////////////
 // ROUTE/REGISTRATION //
@@ -74,9 +68,7 @@ app.get('/partials/:partialPath', function (req, res) {
 });
 // default match all routes; i.e. catch all in order to coordinate/not conflict with Angular routing
 app.get('*', function (req, res) {
-  res.render('index', {
-    mongoMessage: mongoMessage
-  });
+  res.render('index');
 });
 
 ///////////////

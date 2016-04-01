@@ -1,0 +1,27 @@
+body {
+  padding-top: 61px;
+}
+.navbar {
+  background-color: #5243ab;
+}
+.navbar .nav.navbar-nav a {
+  color: #fff;
+}
+.navbar-header a.navbar-brand {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar-header a.navbar-brand h6 {
+  color: #ccc;
+}
+.panel-primary>.panel-heading {
+  background-color: #37373c;
+  border-color: #37373c;
+}
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+footer p {
+  border-top: 1px solid #d7e0e2;
+}
