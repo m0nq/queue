@@ -10,7 +10,3 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     controller: 'mainCtrl'
   });
 });
-
-app.controller('mainCtrl', function ($scope) {
-  $scope.myVar = 'Hello from Angular!';
-});

@@ -6,13 +6,18 @@
   .row
     .col-md-6
       //- TODO: figure out how to make this a partial
-      //- div(ng-include="partials/featured-courses")
+      //- div(ng-include="/partials/featured-courses")
       div.panel.panel-primary
         .panel-heading.text-center Featured Courses
-        .panel-body Body goes here...
+        .panel-body
+          .row(ng-repeat="course in courses | filter:featured.true")
+            .col-md-12 {{course.name}}
     .col-md-6
       //- TODO: and how to make this a partial too
-      //- div(ng-include="partials/new-courses")
+      //- div(ng-include="/partials/new-courses")
       div.panel.panel-primary
         .panel-heading.text-center New Courses
-        .panel-body Body goes here...
+        .panel-body 
+          .row(ng-repeat="course in courses | orderBy:'published' | filter:featured.false | limitTo:10")
+            .col-md-3 {{course.published | date:'MMM d yyyy'}}
+            .col-md-9 {{course.name}}

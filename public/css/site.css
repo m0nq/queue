@@ -2,7 +2,7 @@ body {
   padding-top: 61px;
 }
 .navbar {
-  background-color: #5243ab;
+  background-color: #391cbf;
 }
 .navbar .nav.navbar-nav a {
   color: #fff;
@@ -15,8 +15,11 @@ body {
   color: #ccc;
 }
 .panel-primary>.panel-heading {
-  background-color: #37373c;
-  border-color: #37373c;
+  background-color: #3c3b3d;
+  border-color: #3c3b3d;
+}
+.panel-primary {
+  border-color: #3c3b3d;
 }
 footer {
   padding-left: 15px;
