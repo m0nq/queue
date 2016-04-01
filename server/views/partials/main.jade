@@ -1,2 +1,23 @@
-h1 This is a partial
-h2 {{ myVar }}
+.container
+  .jumbotron
+    h1 The Queue
+    p Gentrify 8-bit street art, tousled pitchfork cliche poutine ugh umami cornhole bitters neutra keffiyeh microdosing. Drinking vinegar offal shabby chic, gastropub letterpress freegan schlitz chartreuse. 3 wolf moon slow-carb affogato tattooed, keytar four loko farm-to-table wolf small batch 90's. You probably haven't heard of them crucifix wolf, viral banjo cold-pressed freegan. Ethical artisan sartorial, banjo asymmetrical street art skateboard portland. Blue bottle mixtape vice art party, deep v craft beer narwhal VHS celiac artisan. Brooklyn fap kickstarter raw denim polaroid, intelligentsia shabby chic sustainable hoodie distillery scenester swag chillwave bitters.
+    
+  .row
+    .col-md-6
+      //- TODO: figure out how to make this a partial
+      //- div(ng-include="/partials/featured-courses")
+      div.panel.panel-primary
+        .panel-heading.text-center Featured Courses
+        .panel-body
+          .row(ng-repeat="course in courses | filter:featured.true")
+            .col-md-12 {{course.name}}
+    .col-md-6
+      //- TODO: and how to make this a partial too
+      //- div(ng-include="/partials/new-courses")
+      div.panel.panel-primary
+        .panel-heading.text-center New Courses
+        .panel-body 
+          .row(ng-repeat="course in courses | orderBy:'published' | filter:featured.false | limitTo:10")
+            .col-md-3 {{course.published | date:'MMM d yyyy'}}
+            .col-md-9 {{course.name}}
