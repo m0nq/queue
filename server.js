@@ -29,9 +29,9 @@ require('./server/config/express')(app, config);
 //////////////////////
 require('./server/config/mongoose')(config);
 
-//////////////
-// Passport //
-//////////////
+///////////////////////////////////////////
+// Passport (./server/config/express.js) //
+///////////////////////////////////////////
 // User model for passport lookup
 var User = mongoose.model('User');
 passport.use(new localStrategy(function (username, password, done) {
@@ -66,9 +66,9 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-////////////////////////
-// ROUTE/REGISTRATION //
-////////////////////////
+////////////////////////////////////
+// ROUTE/REGISTRATION (./server/config/routes.js) //
+////////////////////////////////////
 require('./server/config/routes')(app);
 
 ///////////////
