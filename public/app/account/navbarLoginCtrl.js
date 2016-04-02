@@ -1,12 +1,12 @@
-angular.module('app').controller('navbarLoginCtrl', function ($scope, $http) {
+angular.module('app').controller('navbarLoginCtrl', function ($scope, $http, identity, notifier, auth) {
+  $scope.identity = identity;
   $scope.signIn = function (username, password) {
-    $http.post('/login', {username: username, password: password})
-    .then(function (response) {
-      if (response.data.success) {
-        console.log("success!");
+    auth.authenticateUser(username, password).then(function (success) {
+      if (success) {
+        notifier.notify("You are now logged in.")
       } else {
-        console.log("failed to log in. :'(");
+        notifier.notify("Incorrect Username/Password combination. Please try again.")
       }
-    })
+    });
   };
 });

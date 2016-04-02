@@ -42,3 +42,9 @@ footer p {
   background-color: #635f5f;
   border-color: #635f5f;
 }
+.toast-top-right {
+  top: 70px;
+}
+.toast-success {
+  background-color: #1cbfa7;
+}
