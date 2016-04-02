@@ -2,7 +2,8 @@ body {
   padding-top: 61px;
 }
 .navbar {
-  background-color: #391cbf;
+  background-color: #1cbfa7;
+  border-color: #1cbfa7;
 }
 .navbar .nav.navbar-nav a {
   color: #fff;
@@ -27,4 +28,23 @@ footer {
 }
 footer p {
   border-top: 1px solid #d7e0e2;
+}
+.navbar-form .form-group {
+  margin-left: 10px;
+}
+.navbar-form button {
+  margin-left: 10px;
+  background-color: #3c3b3d;
+  border-color: #3c3b3d;
+}
+.navbar-form button:hover {
+  margin-left: 10px;
+  background-color: #635f5f;
+  border-color: #635f5f;
+}
+.toast-top-right {
+  top: 70px;
+}
+.toast-success {
+  background-color: #1cbfa7;
 }
