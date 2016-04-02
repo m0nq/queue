@@ -5,12 +5,14 @@ The Queue is a system to inspire people to stay in school, and attain their educ
 It’ll allow you to keep track and manage your progress, with a personalized Curriculum Vitae (CV), as well as connect with a global community of people wanting to share in the learning experience.
 
 **Aspects**
+
 The three main aspects of the system are
-- Determining your learning goals by creating your queue
-- Interacting with the market of educational platforms with Chips
-- Showing off your CV after every certificate and course completion
++ Determining your learning goals by creating your queue
++ Interacting with the market of educational platforms with Chips
++ Showing off your CV after every certificate and course completion
 
 **Benefits**
+
 Anyone person who’s ever wanted to advance their skills for a career, or continuing educational goals, or general life-long learners, especially if they don’t have the means take out college loans and/or be able to pay for tuition.
 
 All that’s needed is your determination, and access to the Internet.
