@@ -23,7 +23,9 @@
   "homepage": "https://github.com/m0nq/queue#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.10",
