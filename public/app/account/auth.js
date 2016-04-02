@@ -1,4 +1,4 @@
-angular.module('app').factory('auth', function ($http, identity, $q) {
+angular.module('app').factory('auth', function ($http, $q, identity) {
   return {
     authenticateUser: function (username, password) {
       var dfd = $q.defer();
