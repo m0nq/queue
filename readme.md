@@ -22,7 +22,7 @@ All that’s needed is your determination, and access to the Internet.
 - Stylus
 - CSS3
 - JavaScript
-- MongDB
+- MongoDB
 - Express
 - Angular
 - Node

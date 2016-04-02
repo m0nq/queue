@@ -3,6 +3,8 @@
 //////////////////
 var express = require('express'),
     mongoose = require('mongoose');
+    // passport and passport-local help users to authenticate passwords stored locally in the database,
+    // opposed to OAuth which authenticates through a third party
 
 // env variable to determine whether in development, production, or test
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
