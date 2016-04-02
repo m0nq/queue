@@ -16,9 +16,9 @@ var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
 
-// //////////////////////
-// // Mongoose/MongoDB //
-// //////////////////////
+//////////////////////
+// Mongoose/MongoDB //
+//////////////////////
 require('./server/config/mongoose')(config);
 
 ////////////////////////
