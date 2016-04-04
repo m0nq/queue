@@ -18,6 +18,14 @@ block main-content
             .form-group
               input.form-control(type="password", placeholder="Password", ng-model="password")
             button.btn.btn-primary(ng-click="signIn(username, password)") Sign In
+          ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
+            li.dropdown
+              a.dropdown-toggle(href="", data-toggle="dropdown")
+                | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href="", ng-click="signOut()") Sign Out
             
   section.content
     div(ng-view)

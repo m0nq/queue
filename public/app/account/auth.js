@@ -12,6 +12,14 @@ angular.module('app').factory('auth', function ($http, $q, identity) {
         }
       });
       return dfd.promise;
+    },
+    logoutUser: function () {
+      var dfd = $q.defer();
+      $http.post('/logout', {logout: true}).then(function () {
+        identity.currentUser = undefined;
+        dfd.resolve();
+      });
+      return dfd.promise;
     }
   };
 });

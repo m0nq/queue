@@ -20,36 +20,39 @@ module.exports = function (config) {
 
   // User Schema contains user basic information such as name, email, password,
   // as well as authorization and authentication information
-  var UserSchema = mongoose.Schema({
+  var userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     username: String,
-    salt: String,
     hashed_pwd: String
   });
 
-  UserSchema.methods = {
+  userSchema.methods = {
     authenticate: function functionName(passwordToMatch) {
-      console.log(passwordToMatch);
       return bcrypt.compareSync(passwordToMatch, this.hashed_pwd);
     }
   };
 
   // create a new user model
-  var User = mongoose.model('User', UserSchema);
+  var User = mongoose.model('User', userSchema);
 
   // create default users;
   User.find({}).exec(function (err, collection) {
-    // check if there are documents in the collection, create new users
-    if (collection.length === 0) {
+    if (err) {
+      console.error("Error:", err);
+    } else if (collection.length === 0) { // check if there are documents in the collection, create new users
       var salt, hash;
       console.log("salting alex...");
       salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('alex', salt);
+      hash = bcrypt.hashSync('white', salt);
       User.create({firstName: "Alex", lastName: "White", username: "alex", salt: salt, hashed_pwd: hash});
+      console.log("salting christina...");
+      salt = bcrypt.genSaltSync(10);
+      hash = bcrypt.hashSync('yueh', salt);
+      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", salt: salt, hashed_pwd: hash});
       console.log("salting monk...");
       salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('monk', salt);
+      hash = bcrypt.hashSync('wellington', salt);
       User.create({firstName: "Monk", lastName: "Wellington", username: "monk", salt: salt, hashed_pwd: hash});
       console.log("done salting.");
     }
