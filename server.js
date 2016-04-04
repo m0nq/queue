@@ -29,17 +29,19 @@ require('./server/config/express')(app, config);
 //////////////////////
 require('./server/config/mongoose')(config);
 
-///////////////////////////////////////////
-// Passport (./server/config/express.js) //
-///////////////////////////////////////////
+//////////////
+// Passport //
+//////////////
 // User model for passport lookup
 var User = mongoose.model('User');
-passport.use(new localStrategy(function (username, password, done) {
+passport.use(new localStrategy(
+  function (username, password, done) {
     // varify that the user name and password given are correct,
     // then find the correct user, and pass that document to the done function.
-    User.findOne({username:username}).exec(function (err, user) {
+    User.findOne(username, function (err, user) {
       // NAIVE IMPLEMENTATION:
-      if (user) {
+      console.log(user);
+      if (user && user.authenticate(password)) {
         return done(null, user);
       } else {
         return done(null, false);
@@ -66,9 +68,9 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-////////////////////////////////////
-// ROUTE/REGISTRATION (./server/config/routes.js) //
-////////////////////////////////////
+////////////////////////
+// ROUTE/REGISTRATION //
+////////////////////////
 require('./server/config/routes')(app);
 
 ///////////////
