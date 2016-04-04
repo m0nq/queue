@@ -19,6 +19,8 @@ module.exports = function (app) {
 
   // default match all routes; i.e. catch all in order to coordinate/not conflict with Angular routing
   app.get('*', function (req, res) {
-    res.render('index');
+    res.render('index', {
+      bootstrappedUser: req.user
+    });
   });
 };
