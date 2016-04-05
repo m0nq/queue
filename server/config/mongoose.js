@@ -24,7 +24,8 @@ module.exports = function (config) {
     firstName: String,
     lastName: String,
     username: String,
-    hashed_pwd: String
+    hashed_pwd: String,
+    roles: [String]
   });
 
   userSchema.methods = {
@@ -44,16 +45,16 @@ module.exports = function (config) {
       var salt, hash;
       console.log("salting alex...");
       salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('white', salt);
-      User.create({firstName: "Alex", lastName: "White", username: "alex", salt: salt, hashed_pwd: hash});
+      hash = bcrypt.hashSync('alex', salt);
+      User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash, roles: ["admin"]});
       console.log("salting christina...");
       salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('yueh', salt);
-      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", salt: salt, hashed_pwd: hash});
+      hash = bcrypt.hashSync('christina', salt);
+      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash, roles: []});
       console.log("salting monk...");
       salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('wellington', salt);
-      User.create({firstName: "Monk", lastName: "Wellington", username: "monk", salt: salt, hashed_pwd: hash});
+      hash = bcrypt.hashSync('monk', salt);
+      User.create({firstName: "Monk", lastName: "Wellington", username: "monk", hashed_pwd: hash});
       console.log("done salting.");
     }
   });

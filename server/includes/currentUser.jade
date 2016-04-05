@@ -1,3 +1,4 @@
-if bootstrappedUser
+//- bootstrapping the logged in user from the back end to be the front
+if !!bootstrappedUser
   script.
     window.bootstrappedUserObject = !{JSON.stringify(bootstrappedUser)}
