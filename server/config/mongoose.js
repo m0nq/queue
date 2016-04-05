@@ -25,7 +25,6 @@ module.exports = function (config) {
     lastName: String,
     username: String,
     hashed_pwd: String,
-    roles: [String]
   });
 
   userSchema.methods = {
@@ -44,18 +43,19 @@ module.exports = function (config) {
     } else if (collection.length === 0) { // check if there are documents in the collection, create new users
       var salt, hash;
       console.log("salting alex...");
-      salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('alex', salt);
-      User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash, roles: ["admin"]});
+      hash = createHash('white');
+      User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash});
       console.log("salting christina...");
-      salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('christina', salt);
-      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash, roles: []});
+      hash = createHash('yeuh');
+      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash});
       console.log("salting monk...");
-      salt = bcrypt.genSaltSync(10);
-      hash = bcrypt.hashSync('monk', salt);
+      hash = createHash('wellington');
       User.create({firstName: "Monk", lastName: "Wellington", username: "monk", hashed_pwd: hash});
       console.log("done salting.");
     }
   });
 };
+
+function createHash(pwd) {
+  return bcrypt.hashSync(pwd, 10);
+}

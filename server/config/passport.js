@@ -8,14 +8,14 @@ var mongoose = require('mongoose'),
     // strategies are how passport implements authentication
     // using a local strategy means a user can login using a username and password
     // that is kept within the local database
-    localStrategy = require('passport-local').Strategy;
+    LocalStrategy = require('passport-local').Strategy;
     // TODO: implement strategy to for facebook, google+, twitter
 
 // User model for passport lookup
 var User = mongoose.model('User');
 
 module.exports = function () {
-  passport.use(new localStrategy(
+  passport.use(new LocalStrategy(
     function (username, password, done) {
       // varify that the user name and password given are correct,
       // then find the correct user, and pass that document to the done function.
