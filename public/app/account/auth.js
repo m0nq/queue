@@ -6,7 +6,7 @@ angular.module('app').factory('auth', function ($http, $q, identity, user) {
       .then(function (response) {
         if (response.data.success) {
           var newUser = new user();
-          angular.extend(user, response.data.user);
+          angular.extend(newUser, response.data.user);
           identity.currentUser = newUser;
           dfd.resolve(true);
         } else {

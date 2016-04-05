@@ -1,9 +1,18 @@
-var auth = require('./auth');
+var auth = require('./auth'),
+    mongoose = require('mongoose'),
+    User = mongoose.model('User');
 
 ////////////////////////
 // ROUTE/REGISTRATION //
 ////////////////////////
 module.exports = function (app) {
+
+  app.get('/api/users', function (req, res) {
+    User.find({}).exec(function (err, collection) {
+      res.send(collection);
+    });
+  });
+
   // a unique path identifier for partials
   app.get('/partials/:partialPath', function (req, res) {
     res.render('partials/' + req.params.partialPath);
