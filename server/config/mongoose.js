@@ -1,5 +1,4 @@
 var mongoose = require('mongoose'),
-    // crypto = require('crypto');
     bcrypt = require('bcrypt');
 
 //////////////////////
