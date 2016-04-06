@@ -7,7 +7,7 @@ var auth = require('./auth'),
 ////////////////////////
 module.exports = function (app) {
 
-  app.get('/api/users', auth.requiresApiLogin, function (req, res) {
+  app.get('/api/users', auth.requiresRole('admin'), function (req, res) {
     User.find({}).exec(function (err, collection) {
       res.send(collection);
     });
