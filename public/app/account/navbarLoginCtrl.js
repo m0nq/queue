@@ -1,4 +1,4 @@
-angular.module('app').controller('navbarLoginCtrl', function ($scope, $http, identity, notifier, auth) {
+angular.module('app').controller('navbarLoginCtrl', function ($scope, $http, $location, identity, notifier, auth) {
   $scope.identity = identity;
   $scope.signIn = function (username, password) {
     auth.authenticateUser(username, password).then(function (success) {
@@ -9,4 +9,13 @@ angular.module('app').controller('navbarLoginCtrl', function ($scope, $http, ide
       }
     });
   };
+
+  $scope.signOut = function () {
+    auth.logoutUser().then(function () {
+      $scope.username = "";
+      $scope.password = "";
+      notifier.notify("You have been signed out");
+      $location.path('/');
+    })
+  }
 });
