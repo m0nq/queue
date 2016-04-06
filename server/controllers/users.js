@@ -9,6 +9,7 @@ exports.getUsers = function (req, res) {
 
 exports.createUser = function (req, res, next) {
   var userData = req.body;
+  userData.username = userData.username.toLowerCase();
   userData.hashed_pwd = encrypt.createHash(userData.password);
   User.create(userData, function (err, user) {
     if (err) {

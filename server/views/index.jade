@@ -10,7 +10,7 @@ block main-content
           li
             a(href="/") Home
         //- TODO: figure out this as a partial
-        //- div(ng-include="/app/account/navbarLoginCtrl")
+        //- div(ng-include="views/partials/navbar-login")
         div.navbar-right(ng-cloak ng-controller="navbarLoginCtrl")
           form.navbar-form(ng-hide="identity.isAuthenticated()")
             ul.nav.navbar-nav

@@ -1,7 +1,8 @@
 angular.module('app').controller('signupCtrl', function ($scope, $location, auth, user, notifier) {
   $scope.signup = function () {
     var newUserData = {
-      username: $scope.email,
+      email: $scope.email,
+      username: $scope.username,
       password: $scope.password,
       firstName: $scope.fname,
       lastName: $scope.lname
@@ -11,7 +12,9 @@ angular.module('app').controller('signupCtrl', function ($scope, $location, auth
       notifier.notify("User account created!");
       $location.path('/');
     }), function (reason) {
-      notifier.error(reason);
+
+      // reason.reason?
+      notifier.error(reason.reason);
     }
   }
 })
