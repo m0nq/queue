@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-    bcrypt = require('bcrypt');
+    bcrypt = require('bcrypt'),
+    encrypt = require('../utilities/encryption');
 
 //////////////////////
 // Mongoose/MongoDB //
@@ -43,19 +44,15 @@ module.exports = function (config) {
     } else if (collection.length === 0) { // check if there are documents in the collection, create new users
       var salt, hash;
       console.log("salting alex...");
-      hash = createHash('white');
+      hash = encrypt.createHash('white');
       User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash});
       console.log("salting christina...");
-      hash = createHash('yeuh');
+      hash = encrypt.createHash('yeuh');
       User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash});
       console.log("salting monk...");
-      hash = createHash('wellington');
-      User.create({firstName: "Monk", lastName: "Wellington", username: "monk", hashed_pwd: hash});
+      hash = encrypt.createHash('wellington');
+      User.create({firstName: "Monk", lastName: "Wellington", email: "monq.wellington@gmail.com", username: "monk", hashed_pwd: hash});
       console.log("done salting.");
     }
   });
 };
-
-function createHash(pwd) {
-  return bcrypt.hashSync(pwd, 10);
-}
