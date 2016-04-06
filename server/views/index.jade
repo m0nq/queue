@@ -11,14 +11,14 @@ block main-content
             a(href="/") Home
         //- TODO: figure out this as a partial
         //- div(ng-include="/partials/navbarLoginCtrl")
-        div.navbar-right(ng-controller="navbarLoginCtrl")
+        div.navbar-right(ng-cloak ng-controller="navbarLoginCtrl")
           form.navbar-form(ng-hide="identity.isAuthenticated()")
             .form-group
               input.form-control(placeholder="Email", ng-model="username", autofocus)
             .form-group
               input.form-control(type="password", placeholder="Password", ng-model="password")
             button.btn.btn-primary(ng-click="signIn(username, password)") Sign In
-          ul.nav.navbar-nav.navbar-right(ng-cloak ng-show="identity.isAuthenticated()")
+          ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
             li.dropdown
               a.dropdown-toggle(href="", data-toggle="dropdown")
                 | {{identity.currentUser.firstName + " " + identity.currentUser.lastName + " "}}

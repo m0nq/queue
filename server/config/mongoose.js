@@ -45,10 +45,10 @@ module.exports = function (config) {
       var salt, hash;
       console.log("salting alex...");
       hash = createHash('white');
-      User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash, roles: ['admin']});
+      User.create({firstName: "Alex", lastName: "White", username: "alex", hashed_pwd: hash});
       console.log("salting christina...");
       hash = createHash('yeuh');
-      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash, roles: []});
+      User.create({firstName: "Christina", lastName: "Yueh", username: "christina", hashed_pwd: hash});
       console.log("salting monk...");
       hash = createHash('wellington');
       User.create({firstName: "Monk", lastName: "Wellington", username: "monk", hashed_pwd: hash});
