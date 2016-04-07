@@ -10,6 +10,7 @@ module.exports = function (app) {
 
   app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
   app.post('/api/users', users.createUser);
+  app.put('/api/users', users.updateUser);
 
   // a unique path identifier for partials
   app.get('/partials/:partialPath', function (req, res) {
