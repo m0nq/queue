@@ -15,7 +15,7 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     requireBase: false
   });
   $routeProvider.when('/', {
-    templateUrl: '/partials/main',
+    templateUrl: '/partials/main/main',
     controller: 'mainCtrl'
   })
   .when('/signup', {

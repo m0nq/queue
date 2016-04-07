@@ -1,12 +1,13 @@
 .container
   .jumbotron
     h1 The Queue
-    p The Queue is a system created to help you reach your educational goals. We do this by giving you a few Chips - a crypto-currency that you can use to stop worrying about your debt, and start focusing on the things that matter.
+    p The Queue is a system created to help you reach your educational goals. We do this by giving you a few Chips -
+    p A crypto-currency that you can use to stop worrying about your debt, and start focusing on the things that matter.
     
   .row
     .col-md-6
       //- TODO: figure out how to make this a partial
-      //- div(ng-include="/partials/featured-courses")
+      //- div(ng-include="/partials/main/featured-courses")
       div.panel.panel-primary
         .panel-heading.text-center Featured Courses
         .panel-body
@@ -14,7 +15,7 @@
             .col-md-12 {{course.name}}
     .col-md-6
       //- TODO: and how to make this a partial too
-      //- div(ng-include="/partials/new-courses")
+      //- div(ng-include="/partials/main/new-courses")
       div.panel.panel-primary
         .panel-heading.text-center New Courses
         .panel-body 
