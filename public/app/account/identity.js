@@ -13,7 +13,7 @@ angular.module('app').factory('identity', function ($window, user) {
       return !!this.currentUser;
     },
     isAuthorized: function (role) {
-      return role === 'admin';
+      return !!this.currentUser && this.currentUser.roles.indexOf(role) > -1;
     }
   };
 });
