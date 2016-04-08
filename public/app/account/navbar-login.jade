@@ -7,7 +7,7 @@
       input.form-control(placeholder="Email", ng-model="username", autofocus)
     .form-group
       input.form-control(type="password", placeholder="Password", ng-model="password")
-    button.btn.btn-primary(ng-click="signIn(username, password)") Sign In
+    button.btn.btn-primary(ng-click="signin(username, password)") Sign In
   ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
     li.dropdown
       a.dropdown-toggle(href="", data-toggle="dropdown")
@@ -17,4 +17,4 @@
         li(ng-show="identity.currentUser.isAdmin()")
           a(href="/admin/user") User Admin
         li
-          a(href="", ng-click="signOut()") Sign Out
+          a(href="", ng-click="signout()") Sign Out

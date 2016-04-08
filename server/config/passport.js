@@ -19,7 +19,7 @@ module.exports = function () {
     function (username, password, done) {
       // varify that the user name and password given are correct,
       // then find the correct user, and pass that document to the done function.
-      User.findOne(username, function (err, user) {
+      User.findOne({username:username}, function (err, user) {
         // NAIVE IMPLEMENTATION:
         console.log(user);
         if (user && user.authenticate(password)) {

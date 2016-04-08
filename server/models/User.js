@@ -44,7 +44,7 @@ function createDefaultUsers() {
       User.create({firstName: "Christina", lastName: "Yueh", username: "christina", email: "cjyueh@gmail.com", hashed_pwd: hash});
       console.log("salting monk...");
       hash = encrypt.createHash('wellington');
-      User.create({firstName: "Monk", lastName: "Wellington", email: "monq.wellington@gmail.com", username: "monk", hashed_pwd: hash});
+      User.create({firstName: "Monk", lastName: "Wellington", email: "monq.wellington@gmail.com", username: "monk", hashed_pwd: hash, roles: ['admin']});
       console.log("done salting.");
     }
   });
