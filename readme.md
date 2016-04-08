@@ -26,3 +26,8 @@ All that’s needed is your determination, and access to the Internet.
 - Express
 - Angular
 - Node
+
+####Known Issues
+- Users can't update themselves
+- Still needs API implementation with various MOOC's
+- Still needs a wallet section for Chips
