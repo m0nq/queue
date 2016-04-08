@@ -13,8 +13,8 @@ module.exports = function (app) {
   app.put('/api/users', users.updateUser);
 
   // a unique path identifier for partials
-  app.get('/partials/:partialPath', function (req, res) {
-    res.render('partials/' + req.params.partialPath);
+  app.get('/partials/*', function (req, res) {
+    res.render('../../public/app/' + req.params[0]);
   });
 
   // post route when a user is successfully found in the db

@@ -12,8 +12,6 @@ angular.module('app').controller('signupCtrl', function ($scope, $location, auth
       notifier.notify("User account created!");
       $location.path('/');
     }), function (reason) {
-
-      // reason.reason?
       notifier.error(reason.reason);
     }
   }

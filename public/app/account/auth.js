@@ -2,8 +2,7 @@ angular.module('app').factory('auth', function ($http, $q, identity, user) {
   return {
     authenticateUser: function (username, password) {
       var dfd = $q.defer();
-      $http.post('/login', {username: username, password: password})
-      .then(function (response) {
+      $http.post('/login', {username: username, password: password}).then(function (response) {
         if (response.data.success) {
           var newUser = new user();
           angular.extend(newUser, response.data.user);
@@ -29,7 +28,7 @@ angular.module('app').factory('auth', function ($http, $q, identity, user) {
       return dfd.promise;
     },
 
-    udpateCurrentUser: function (newUserData) {
+    updateCurrentUser: function (newUserData) {
       var dfd = $q.defer();
 
       var clone = angular.copy(identity.currentUser);

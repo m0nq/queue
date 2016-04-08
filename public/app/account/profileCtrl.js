@@ -16,7 +16,7 @@ angular.module('app').controller('profileCtrl', function ($scope, auth, identity
       newUserData.password = $scope.password;
     }
 
-    auth.udpateCurrentUser(newUserData).then(function () {
+    auth.updateCurrentUser(newUserData).then(function () {
       notifier.notify("Your account has been successfully updated.");
     }, function (reason) {
       notifier.error(reason);

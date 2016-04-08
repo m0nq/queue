@@ -1,7 +1,7 @@
 // create angular module
 var app = angular.module('app', ['ngResource', 'ngRoute'])
 .config(function ($routeProvider, $locationProvider) {
-  var routeRolesChecks = {
+  var routeRoleChecks = {
     admin: {auth: function (auth) {
       return auth.authorizeCurrentUserForRoute('admin');
     }},
@@ -15,21 +15,22 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     requireBase: false
   });
   $routeProvider.when('/', {
-    templateUrl: '/partials/main',
+    templateUrl: '/partials/main/main',
     controller: 'mainCtrl'
   })
   .when('/signup', {
-    templateUrl: '/partials/signup',
+    templateUrl: '/partials/account/signup',
     controller: 'signupCtrl'
   })
-  .when('/admin/user', {
-    templateUrl: '/partials/user-list',
-    controller: 'userListCtrl'
+  .when('/admin/users', {
+    templateUrl: '/partials/admin/user-list',
+    controller: 'userListCtrl',
+    resolve: routeRoleChecks.admin
   })
   .when('/profile', {
-    templateUrl: '/partials/profile',
+    templateUrl: '/partials/account/profile',
     controller: 'profileCtrl',
-    resolve: routeRolesChecks .user
+    resolve: routeRoleChecks.user
   });
 });
 
