@@ -25,6 +25,10 @@ module.exports = function (app) {
     res.end();
   });
 
+  app.all('/api/*', function (req, res) {
+    res.send(404);
+  });
+
   // default match all routes; i.e. catch all in order to coordinate/not conflict with Angular routing
   app.get('*', function (req, res) {
     res.render('index', {
