@@ -28,7 +28,7 @@ angular.module('app').factory('auth', function ($http, $q, identity, user) {
       return dfd.promise;
     },
 
-    udpateCurrentUser: function (newUserData) {
+    updateCurrentUser: function (newUserData) {
       var dfd = $q.defer();
 
       var clone = angular.copy(identity.currentUser);
