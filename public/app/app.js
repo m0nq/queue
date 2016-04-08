@@ -22,8 +22,8 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     templateUrl: '/partials/signup',
     controller: 'signupCtrl'
   })
-  .when('/admin/user', {
-    templateUrl: '/partials/user-list',
+  .when('/admin/users', {
+    templateUrl: '/partials/admin/user-list',
     controller: 'userListCtrl'
   })
   .when('/profile', {
