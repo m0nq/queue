@@ -45,6 +45,12 @@ footer p {
 .dropdown-menu>li>a {
   color: #000;
 }
+.top-padding-med {
+  padding-top: 10px;
+}
+.margin-left-med {
+  margin-left: 10px;
+}
 #toast-container {
   top: 60px;
 }

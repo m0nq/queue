@@ -31,6 +31,10 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     templateUrl: '/partials/account/profile',
     controller: 'profileCtrl',
     resolve: routeRoleChecks.user
+  })
+  .when('/courses', {
+    templateUrl: '/partials/courses/course-list',
+    controller: 'courseListCtrl'
   });
 });
 
