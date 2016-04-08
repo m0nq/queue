@@ -19,7 +19,7 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     controller: 'mainCtrl'
   })
   .when('/signup', {
-    templateUrl: '/partials/signup',
+    templateUrl: '/partials/account/signup',
     controller: 'signupCtrl'
   })
   .when('/admin/users', {
