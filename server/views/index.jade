@@ -11,7 +11,7 @@ block main-content
             a(href="/") Home
         //- TODO: figure out this as a partial
         //- div(ng-include="/partials/account/navbar-login")
-        div.navbar-right(ng-controller="navbarLoginCtrl")
+        div.navbar-right(ng-cloak ng-controller="navbarLoginCtrl")
           form.navbar-form(ng-hide="identity.isAuthenticated()")
             ul.nav.navbar-nav
               li
@@ -32,7 +32,7 @@ block main-content
                 li
                   a(href="/profile") Profile
                 li
-                  a(href="", ng-click="signOut()") Sign Out
+                  a(href="", ng-click="signout()") Sign Out
             
   section.content
     div(ng-view)
