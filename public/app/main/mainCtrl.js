@@ -13,6 +13,6 @@ angular.module('app').controller('mainCtrl', function ($scope) {
     {name: 'Tibetan Buddhist Meditation and the Modern World: Lesser Vehicle', featured: false, published: new Date('3/31/2016'), host: "Coursera"},
     {name: 'Bitcoin and Cryptocurrency Technologies', featured: false, published: new Date('3/31/2016'), host: "Coursera"},
     {name: 'American Government', featured: true, published: new Date('11/16/2016'), host: "EdX"},
-    {name: 'Combinatorial Mathematics', featured: false, published: new Date('1/11/2016'), host: "EdX"},
+    {name: 'Combinatorial Mathematics', featured: false, published: new Date('1/11/2016'), host: "EdX"}
   ];
 });
