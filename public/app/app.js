@@ -28,7 +28,7 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
     resolve: routeRoleChecks.admin
   })
   .when('/profile', {
-    templateUrl: '/partials/profile',
+    templateUrl: '/partials/account/profile',
     controller: 'profileCtrl',
     resolve: routeRoleChecks.user
   });
