@@ -35,6 +35,10 @@ var app = angular.module('app', ['ngResource', 'ngRoute'])
   .when('/courses', {
     templateUrl: '/partials/courses/course-list',
     controller: 'courseListCtrl'
+  })
+  .when('/wallet', {
+    templateUrl: '/partials/wallet/wallet',
+    controller: 'walletCtrl'
   });
 });
 

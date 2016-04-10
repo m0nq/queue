@@ -17,7 +17,7 @@ angular.module('app').controller('profileCtrl', function ($scope, auth, identity
     }
 
     auth.updateCurrentUser(newUserData).then(function () {
-      notifier.notify("Your account has been successfully updated.");
+      notifier.notify("Success.");
     }, function (reason) {
       notifier.error(reason);
     });
