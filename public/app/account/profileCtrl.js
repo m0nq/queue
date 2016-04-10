@@ -1,4 +1,5 @@
 angular.module('app').controller('profileCtrl', function ($scope, auth, identity, notifier) {
+  console.log(auth);
   $scope.email = identity.currentUser.email;
   $scope.username = identity.currentUser.username;
   $scope.fname = identity.currentUser.firstName;

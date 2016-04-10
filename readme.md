@@ -28,6 +28,7 @@ All that’s needed is your determination, and access to the Internet.
 - Node
 
 ####Known Issues
-- Users can't update themselves
-- Still needs API implementation with various MOOC's
-- Still needs a wallet section for Chips
+- Admin should be able to access API's 
+- User should be able to update only their own information.
+- User should be able to access wallet for Chips
+- Chips should interface with wallet
